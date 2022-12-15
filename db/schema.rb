@@ -15,9 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_040156) do
   enable_extension "plpgsql"
 
   create_table "classrooms", force: :cascade do |t|
-    t.integer "rank"
-    t.integer "formality"
-    t.integer "grade"
+    t.string "rank"
+    t.string "formality"
+    t.string "grade"
     t.string "subject"
     t.string "address"
     t.string "time"
@@ -53,10 +53,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_040156) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name"
-    t.string "nickname"
+    t.string "fullname"
     t.string "image"
     t.string "email"
+    t.string "address"
+    t.string "phone"
+    t.string "cccd"
+    t.string "role"
+    t.string "cv"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
