@@ -1,9 +1,9 @@
 class CreateClassrooms < ActiveRecord::Migration[7.0]
   def change
     create_table :classrooms do |t|
-      t.integer :rank
-      t.integer :formality
-      t.integer :grade
+      t.string :rank
+      t.string :formality
+      t.string :grade
       t.string :subject
       t.string :address
       t.string :time
