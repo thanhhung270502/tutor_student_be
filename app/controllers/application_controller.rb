@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::API
+  respond_to :json
+  before_action :configure_permitted_parameters, if: :devise_controller?
   include DeviseTokenAuth::Concerns::SetUserByToken
 
   rescue_from ActionController::Redirecting::UnsafeRedirectError, with: :redirect_judgment
+
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:fullname, :phone, :address, :role, :cccd, :cv, :image])
+  end
 
   private
 
